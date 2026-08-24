@@ -13,3 +13,6 @@ Chứa toàn bộ dữ liệu dùng trong dự án.
 - **`processed/`** — Dữ liệu đã qua tiền xử lý (làm sạch, biến đổi đặc trưng...), tương ứng cấu trúc với `raw/`:
   - `train.csv`, `val.csv`, `test.csv`
   - `.gitkeep`
+-**`filtered/`** — Dữ liệu qua giảm chiều bằng phương pháp boruta, tương ứng cấu trúc với `raw/`:
+  - `train.csv`, `val.csv`, `test.csv`
+  - `.gitkeep`

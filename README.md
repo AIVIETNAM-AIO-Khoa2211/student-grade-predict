@@ -1,6 +1,6 @@
-# Idontknowyet
+# student grade predict
 
-Dự án học tập, thực hành quy trình hoàn chỉnh khi huấn luyện mô hình học máy: từ xử lý dữ liệu, huấn luyện, đến đánh giá kết quả. Dữ liệu sử dụng là bộ `student_performance_dataset`, với 3 mô hình chính được cài đặt: **Decision Tree**, **Random Forest**, **AdaBoost**.
+Dự án học tập, thực hành quy trình hoàn chỉnh khi huấn luyện mô hình học máy: từ xử lý dữ liệu, huấn luyện, đến đánh giá kết quả. Dữ liệu sử dụng là bộ `student_performance_dataset`, với 4 mô hình chính được cài đặt: **Decision Tree**, **Random Forest**, **AdaBoost**, **LogisticRegression**
 
 ## Cấu trúc thư mục
 

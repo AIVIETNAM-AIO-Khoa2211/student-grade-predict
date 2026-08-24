@@ -7,4 +7,5 @@ Cài đặt các mô hình học máy dùng trong dự án.
 - **`decision_tree.py`** — Mô hình Decision Tree.
 - **`random_forest.py`** — Mô hình Random Forest.
 - **`adaboost.py`** — Mô hình AdaBoost.
+- **`linear_classify.py`** — Mô hình Logistic Regression ứng dụng vào classify.
 - **`__init__.py`** — Đánh dấu `models` là một Python package con.

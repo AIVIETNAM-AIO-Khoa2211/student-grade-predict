@@ -7,7 +7,7 @@ import pandas as pd
 from src.config import RANDOM_STATE
 
 
-def evaluate_val_logistic_regression(X_train, y_train, X_val, y_val, isprint=True, **params):
+def evaluate_val_logistic_regression(X_train, y_train, X_val, y_val, verbose=True, **params):
     # Chuẩn hóa dữ liệu — bắt buộc với model tuyến tính, khác với model dạng cây
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
@@ -21,14 +21,14 @@ def evaluate_val_logistic_regression(X_train, y_train, X_val, y_val, isprint=Tru
     lr_pred = lr_model.predict(X_val_scaled)
     lr_accuracy = accuracy_score(y_val, lr_pred)
 
-    if isprint:
+    if verbose:
         print(f"Độ chính xác Logistic Regression: {lr_accuracy:.4f}")
         print("\nClassification Report:")
         print(classification_report(y_val, lr_pred, zero_division=0))
 
     return lr_model, lr_accuracy
 
-def concat_and_train_logistic(X_train, y_train, X_val, y_val, isprint=True, **params):
+def concat_and_train_logistic(X_train, y_train, X_val, y_val, verbose=True, **params):
     # 1. Gộp DataFrame trước khi scale
     X_combined_raw = pd.concat([X_train, X_val], ignore_index=True)
     y_combined = pd.concat([y_train, y_val], ignore_index=True)
@@ -41,7 +41,7 @@ def concat_and_train_logistic(X_train, y_train, X_val, y_val, isprint=True, **pa
     model = LogisticRegression(random_state=RANDOM_STATE, **params, tol=0.002)
     model.fit(X_combined_scaled, y_combined)
 
-    if isprint:
+    if verbose:
         print(f"Đã train Logistic Regression trên {len(X_combined_scaled)} mẫu (train + val).")
 
     return model, scaler

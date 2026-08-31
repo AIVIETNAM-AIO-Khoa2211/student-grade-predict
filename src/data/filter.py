@@ -17,7 +17,7 @@ def boruta_filt(
 
     rf = RandomForestClassifier(
         n_jobs= -1,
-        max_depth=5,
+        max_depth=max_depth,
         random_state=RANDOM_STATE,
         class_weight="balanced"
     )

@@ -14,7 +14,7 @@ def evaluate_val_logistic_regression(X_train, y_train, X_val, y_val, isprint=Tru
     X_val_scaled = scaler.transform(X_val)  # chỉ transform, không fit lại trên val
 
     # Huấn luyện Logistic Regression
-    lr_model = LogisticRegression(random_state=RANDOM_STATE, **params)
+    lr_model = LogisticRegression(random_state=RANDOM_STATE, **params, tol=0.002)
     lr_model.fit(X_train_scaled, y_train)
 
     # Dự đoán và đánh giá trên tập val
@@ -38,7 +38,7 @@ def concat_and_train_logistic(X_train, y_train, X_val, y_val, isprint=True, **pa
     X_combined_scaled = scaler.fit_transform(X_combined_raw)
 
     # 3. Train mô hình
-    model = LogisticRegression(random_state=RANDOM_STATE, **params)
+    model = LogisticRegression(random_state=RANDOM_STATE, **params, tol=0.002)
     model.fit(X_combined_scaled, y_combined)
 
     if isprint:
